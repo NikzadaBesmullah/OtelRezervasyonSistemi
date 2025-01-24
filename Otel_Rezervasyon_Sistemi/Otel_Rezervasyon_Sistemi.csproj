@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC7F8B5D-DF56-4AFE-A1C0-5F8A24D47CBD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Otel_Rezervasyon_Sistemi</RootNamespace>
+    <AssemblyName>Otel_Rezervasyon_Sistemi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=9.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 9.1\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dal\baglanti.cs" />
+    <Compile Include="Dal\MusteriDao.cs" />
+    <Compile Include="Dal\OdaDao.cs" />
+    <Compile Include="Dal\RezervasyonDao.cs" />
+    <Compile Include="Dal\YoneticiDao.cs" />
+    <Compile Include="Domain\MusteriDomain.cs" />
+    <Compile Include="Domain\OdaDomain.cs" />
+    <Compile Include="Domain\RezervasyonDomain.cs" />
+    <Compile Include="Domain\YoneticiDomain.cs" />
+    <Compile Include="FrmMusteriler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMusteriler.Designer.cs">
+      <DependentUpon>FrmMusteriler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frmodalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmodalar.Designer.cs">
+      <DependentUpon>Frmodalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRezervasyonlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRezervasyonlar.Designer.cs">
+      <DependentUpon>FrmRezervasyonlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmYoneticiAnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmYoneticiAnaSayfa.Designer.cs">
+      <DependentUpon>FrmYoneticiAnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmYoneticiGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmYoneticiGiris.Designer.cs">
+      <DependentUpon>FrmYoneticiGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmYoneticiSifreYenile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmYoneticiSifreYenile.Designer.cs">
+      <DependentUpon>FrmYoneticiSifreYenile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\MusteriService.cs" />
+    <Compile Include="Service\OdaService.cs" />
+    <Compile Include="Service\RezervasyonService.cs" />
+    <Compile Include="Service\YoneticiService.cs" />
+    <EmbeddedResource Include="FrmMusteriler.resx">
+      <DependentUpon>FrmMusteriler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmodalar.resx">
+      <DependentUpon>Frmodalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRezervasyonlar.resx">
+      <DependentUpon>FrmRezervasyonlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmYoneticiAnaSayfa.resx">
+      <DependentUpon>FrmYoneticiAnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmYoneticiGiris.resx">
+      <DependentUpon>FrmYoneticiGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmYoneticiSifreYenile.resx">
+      <DependentUpon>FrmYoneticiSifreYenile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel Reception.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngegg %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toppng.com-elite-mechanical-has-done-a-great-job-in-my-home-transparent-background-5-star-gif-869x371.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Businessman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\42cef8ff4604e64809d1c5fc778e6a7f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-dubai-tourism-dubai-landmarks-5a79fcbe4a00f5.1338721815179439983031.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a9j6p9ix9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-stress-management-illustration-mind-5b9aebc1501299.439034701536879553328.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a19f5d2153e0249d61dc414a3049db30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a19f5d2153e0249d61dc414a3049db301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\becc9a7bd4bce63644b9594a69226bdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\becc9a7bd4bce63644b9594a69226bdf1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\becc9a7bd4bce63644b9594a69226bdf2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a19f5d2153e0249d61dc414a3049db302.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\becc9a7bd4bce63644b9594a69226bdf3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a19f5d2153e0249d61dc414a3049db303.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-stress-management-illustration-mind-5b9aebc1501299.4390347015368795533281.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-travel-agent-world-tourism-organization-stock-phot-tourist-5ad77e966d9549.8822366315240720864489.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-computer-icons-garage-doors-5aef84465c0891.636910861525646406377.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com %284%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
